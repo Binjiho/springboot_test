@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="admin/layout/basic">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+  <form action="/api/params2" method="post">
+<!--      <form action="/project/member/params" method="post">-->
+      폼데이터2
+      <div>
+        아이디1:<input type="text" name="userId" value="">
+        비밀번호:<input type="text" name="userPw" value="">
+        휴대폰번호:<input type="text" name="htel" value="">
+      </div>
+      <div>
+        <button type="submit">전송</button>
+      </div>
+  </form>
+
+
+</body>
+</html>
