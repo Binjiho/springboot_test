@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" >
+<div th:fragment="Header" id="header" class="mob">
+  <div class="header_inner">
+    <h1>
+      <a href="/project/index" title="">Project</a>
+    </h1>
+
+    <!-- gnb -->
+    <nav class="area_until">
+      <ul class="gnb">
+        <li><a href="/project/member/list" class="board">회원목록조회</a></li>
+        <li><a href="javascript:;" onclick="alert('준비중입니다');" class="banner">배너관리</a></li>
+        <li><a href="/project/notice/list" class="notice">공지사항</a></li>
+        <li><a href="/project/review/list" class="review">이용후기</a></li>
+        <li><a href="/project/reservation" class="reservation">예약</a></li>
+      </ul>
+    </nav>
+    <!-- //gnb -->
+
+    <div class="area_until">
+      <ul>
+        <li><a th:href="@{/project/member/join}">회원가입</a></li>
+        <li><a href="/project/login">로그인</a></li>
+        <li><a href="/project/logout">로그아웃</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="submenu_Bg"></div>
+  <div class="full_menu">
+    <div class="img"></div>
+    <div class="full_gnb"></div>
+  </div>
+</div>
+</html>

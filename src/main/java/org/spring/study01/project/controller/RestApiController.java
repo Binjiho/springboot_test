@@ -3,6 +3,10 @@ package org.spring.study01.project.controller;
 import org.spring.study01.project.dto.MemberDto;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Member;
+import java.util.ArrayList;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api")
 public class RestApiController {
@@ -34,5 +38,17 @@ public class RestApiController {
     @DeleteMapping("/delete")
     public String delete(){
         return "deleteMapping";
+    }
+
+    @GetMapping("/list")
+    public List<MemberDto> getListMember(){
+        List<MemberDto> members = new ArrayList<>();
+        return members;
+    }
+
+    @PostMapping("join")
+    public int joinMember(MemberDto memberDto){
+        int rs = 0;
+        return rs;
     }
 }

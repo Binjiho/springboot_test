@@ -2,15 +2,12 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="admin/layout/basic">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>ADMIN</title>
 </head>
 <body>
+    <h1>관리자 INDEX페이지</h1>
+    <a th:href="@{/project/member/join}">JOIN페이지 이동</a>
 
-<div>
-    userId: <span th:text="${member.userId}" >값1</span>
-    userPw: <span th:text="${member.userPw}" >값2</span>
-    htel: <span th:text="${member.htel}" >값3</span>
-</div>
 
 </body>
 </html>

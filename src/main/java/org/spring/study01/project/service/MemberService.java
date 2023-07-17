@@ -1,8 +1,7 @@
 package org.spring.study01.project.service;
 
-import org.springframework.stereotype.Service;
+import org.spring.study01.project.dto.MemberDto;
 
-@Service
-public class MemberService {
-
+public interface MemberService {
+    int memberInsert(MemberDto memberDto);
 }

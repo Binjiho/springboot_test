@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="project/layout/basic">
+
+<th:block layout:fragment="content">
+    <section id="container">
+
+        <form th:action="@{/project/member/join}" method="post">
+            폼데이터
+            <div>
+                아이디:<input type="text" name="userId" value="">
+                비밀번호:<input type="text" name="userPw" value="">
+                휴대폰번호:<input type="text" name="htel" value="">
+            </div>
+            <div>
+                <button type="submit">전송</button>
+                <input type="submit" value="회원가입">
+            </div>
+        </form>
+
+    </section>
+</th:block>
