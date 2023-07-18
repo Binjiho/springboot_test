@@ -9,18 +9,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Member;
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/project/member")
 public class MemberController {
-//    @Autowired
-//    private MemberService memberService;
 
     //RequiredArgsConstructor
     private final MemberService memberService;
 
     @GetMapping({"", "/index"})
-    public String openIndexPage(){
+    public String openIndexPage(Model model){
+        List<MemberDto> result= memberService.getMemberList();
+        model.addAttribute("result", result);
         return "project/member/index";
     }
 
@@ -36,13 +39,19 @@ public class MemberController {
         if (rs!=1){
             return "redirect:/project/member/join";
         }else{
-            return "redirect:/project/member/joinResult";
+            return "redirect:/project/member/index";
         }
     }
 
-    @GetMapping("/path/{userId}")
-    public String postPathVariable(@PathVariable(value = "userId") String userId ){
+    @GetMapping("/detail/{userId}")
+    public String postPathVariable(@PathVariable(value = "userId") Long userId, Model model ){
         System.out.println("userId -> "+userId);
-        return "";
+        MemberDto memberDto = memberService.memberDetail(userId);
+        if (memberDto != null){
+            model.addAttribute("member", memberDto);
+            return "project/member/detail";
+        }else{
+            return "redirect:project/member/memberList";
+        }
     }
 }

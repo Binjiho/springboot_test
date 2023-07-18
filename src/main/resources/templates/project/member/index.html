@@ -4,6 +4,25 @@
 <th:block layout:fragment="content">
     <section id="container">
 
+        <th:block th:if="${result}">
+            <table>
+                <thead>
+                <tr>
+                    <th>userId</th>
+                    <th>userPw</th>
+                    <th>htel</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="items: ${result}">
+                    <td th:text="${items.userId}"></td>
+                    <td th:text="${items.userPw}"></td>
+                    <td th:text="${items.htel}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </th:block>
+
         <a th:href="@{/project/member/join}">JOIN페이지 이동</a>
 
     </section>
