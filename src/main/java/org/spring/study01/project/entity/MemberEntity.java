@@ -7,6 +7,8 @@ import org.spring.study01.project.dto.MemberDto;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Entity = DB테이블과 매핑
@@ -48,4 +50,8 @@ public class MemberEntity {
     @Column(name = "modified_date")
     private LocalDateTime modifiedDate;
 
+    // 1:N
+    //연관관계의 주인
+    @OneToMany(mappedBy = "memberEntity")
+    private List<BoardEntity> boardEntityList = new ArrayList<>();
 }
